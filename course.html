@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <!-- CSS -->
+    <link rel='stylesheet' type='text/css' media='screen' href='coursepage.css'>
+    <!-- FontAwesome CDN -->
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css'>
+    <!-- JavaScript -->
+    <script src='main.js'></script>
+    <!-- Iconita tab -->
+    <link rel="icon" href="images/headlogo.png" type="image/x-icon">
+    <!-- titlu tab -->
+    <title>DCAcademy | Algoritmul A* </title>
+</head>
+
+<body>
+
+    <div id="title">Algoritmul A*(A star)</div>
+    <!-- Adaugare continut -->
+    <div id="pageContent">
+    </div>
+    <div id="pageText">
+        <h1>
+            Preliminarii:
+        </h1>
+        <p>Pentru aces curs este nevoie de cunoștințe în limbajul Python. Pentru a studia în detaliu apasă<a href="https://www.w3schools.com/python/">&nbsp aici</a>.</p>
+        <h1>
+            Algoritmul A*
+        </h1>
+        <img src="images/astar.gif" alt="">
+        <div id="textInfo">
+            <p>
+                În informatică , A* este un algoritm de căutare a graficului care găsește o cale de la un nod inițial dat la un nod obiectiv dat (sau trece un test obiectiv dat). Folosește o „estimare euristică” care clasifică fiecare nod prin estimarea celei mai bune
+                rute prin acel nod. Vizitați nodul pe baza acelei estimări euristice. Algoritmul A* este, de asemenea, un exemplu de primă căutare . Algoritmul a fost descris pentru prima dată în 1968 de Peter Hart , Nils Nilsson și Bertram Raphael .
+            </p>
+            <h1>Ce sunt euristicele?</h1>
+            <p>
+                Termenul euristic (heuristic) era utilizat în limba greacă (heuriskein) precum şi în limba latină (heuristicus) cu sensul de a căuta, a descoperi. Euristic sau euristica sunt termeni utilizaţi în mod curent pentru a defini acel procedeu de luare a deciziei
+                (sau de găsire a unei soluţii) care nu analizează toată cantitatea de informaţie disponibilă în acest sens. Metodele euristice “sar” peste anumite informaţii sau etape utilizate în mod normal la luarea unei decizii sau găsirea unei soluţii.
+                În anumite situaţii, o metodă euristica poate duce la rezultate mult mai rapide şi mult precise decât metodele clasice de analiză. Conform unor autori, scopul euristicii este acela de a studia metodele şi regulile utilizate pentru descoperiri
+                şi invenţii. Conform altor autori, euristic, înseamnă o procedură foarte rapidă de rezolvare a unei probleme.
+            </p>
+
+        </div>
+
+        <div id="nextText">
+            <h1>La ce e bun A*?</h1>
+            <p>
+                Să luăm în considerare un exemplu motivant. Suntem la o intersecție A și am dori să mergem la o intersecție B care, din fericire, știm că se află la nord de noi. În acest caz, intersecțiile sunt vârfurile unui grafic, iar drumurile sunt arcurile. Dacă
+                efectuați o primă căutare, așa cum este ilustrat de <a href="https://www.pbinfo.ro/articole/6135/algoritmul-lui-dijkstra">algoritmul lui Dijkstra</a>, vom căuta fiecare punct cu o rază circulară fixă, treptat vom extinde
+                acest cerc pentru a căuta intersecțiile cele mai îndepărtate de punctul nostru de plecare. Aceasta poate fi o strategie eficientă dacă nu știți unde este destinația, așa cum face poliția în căutarea unui criminal ascuns. Cu toate acestea,
+                veți pierde timpul dacă aveți mai multe informații. O strategie mai bună este explorarea intersecțiilor situate la nord de prima, deoarece acestea vor fi probabil vârfurile cele mai apropiate de B. Cu toate acestea, trebuie remarcat faptul
+                că drumurile ar putea fi închise obligându-ne să mergem spre sud pentru a ajunge la destinație cu o cale modelată. de C. </p>
+            <p>Deci, dacă drumurile o permit, vom merge și vom explora intersecțiile din ce în ce mai aproape de intersecția obiectivului B. Vom avea nevoie de o retragere ocazională, dar intuitiv aceasta este o strategie care are șanse mari de găsind rapid
+                obiectivul. În plus, se poate dovedi că această strategie va găsi, în orice caz, cea mai bună cale posibilă, adică soluția optimă, la fel ca și căutarea în primul rând. Aceasta este esența cercetării A*. Cu toate acestea, nu există nicio
+                garanție că A* va funcționa mai bine decât algoritmii simpli de căutare. Într-un mediu foarte complicat, singura modalitate de a ajunge la destinație ar putea fi să ne îndreptăm spre sud și apoi să ne plimbăm în jurul lui. În aceste cazuri,
+                testarea nodurilor cele mai apropiate de destinația noastră ar putea fi o pierdere de timp.
+            </p>
+            <p>Se spune că este admisibil un algoritm de căutare care garantează întotdeauna găsirea celei mai scurte căi către un obiectiv. Dacă A* folosește o euristică, atunci distanța (sau, în general, costul) față de obiectiv nu trebuie niciodată supraestimată,
+                deci se poate verifica dacă A* va fi admisibilă. O euristică care face căutarea A* admisibilă se numește euristică admisibilă . Dacă estimarea returnează pur și simplu zero, ceea ce nu va fi niciodată o supraestimare, atunci A* va efectua
+                algoritmul lui Dijkstra și va găsi în continuare o soluție optimă, deși nu rapid. Cea mai bună euristică posibilă, deși nu este de obicei practic să o calculăm, este distanța minimă efectivă până la obiectiv. Un exemplu de euristică practică
+                acceptabilă este distanța în care cioara zboară de la destinație pe o hartă. Se poate verifica că A* nu ia în considerare mai multe noduri decât orice alt algoritm de căutare fezabil, cu excepția cazului în care algoritmul alternativ are
+                o estimare euristică mai precisă. În acest sens, A* este algoritmul cel mai eficient din punct de vedere al calculului, care garantează căutarea celei mai scurte căi.</p>
+            <h1>Cum funcționează A*?</h1>
+            <p>A* începe de la nodul selectat. Un cost de intrare este definit pentru fiecare nod (de obicei zero pentru nodul inițial). A* evaluează apoi distanța de la meta-nod de la cel curent. Această estimare și costul formează împreună euristica care
+                va fi atribuită căii care trece prin acest nod. Nodul este apoi adăugat la o listă , numită adesea „deschis”. Algoritmul elimină apoi primul nod din listă (deoarece va avea cea mai mică valoare a funcției euristice). Dacă lista este goală,
+                nu vor exista căi de la nodul de pornire la meta nod și algoritmul se va opri. Dacă nodul este meta nodul, A* reconstruiește și transmite calea obținută și se oprește. Această reconstrucție a căii pornind de la cele mai apropiate noduri
+                înseamnă că nu este necesară memorarea căii în fiecare nod. Dacă nodul nu este meta nodul, vor fi create noi noduri pentru toate nodurile vecine admisibile; cum se face acest lucru depinde de problemă. Pentru fiecare nod ulterior A* calculează
+                „costul” intrării în nod și îl salvează cu nodul. Acest cost este calculat din suma cumulativă a greutăților stocate în strămoși, plus costul operațiunii pentru a ajunge la acest nou nod. Algoritmul gestionează, de asemenea, o listă „închisă”,
+                o listă de noduri care au fost deja verificate. Dacă un nou nod generat este deja în listă cu un cost egal sau mai mic, nu va exista nicio investigație viitoare a acelui nod sau a căii sale asociate. Dacă un nod din lista închis este același
+                cu unul nou, dar a fost stocat la un cost mai mare, atunci acesta va fi eliminat din lista închisă, iar procesul va continua începând de la noul nod. Apoi, o estimare a distanței de la noul nod la obiectiv este adăugată la cost pentru
+                a-și forma valoarea euristică. Acest nod este apoi adăugat la lista „deschisă”, cu excepția cazului în care există un nod identic cu valoare euristică mai mică sau egală. Algoritmul va fi adoptat la fiecare nod vecin, după care nodul original
+                este preluat din listă și plasat în lista „închis”. Următorul nod va fi obținut din lista deschisă și odată cu acesta se va repeta procesul descris.</p>
+        </div>
+        <img src="images/astargif2.gif" alt="" id="gif2">
+        <h3 id="gifInfo">Modul de functionare A*</h3>
+        <div id="nextText2">
+            <h1>De ce este A* optim și admisibil?</h1>
+            <p>Există o explicație intuitivă a motivului pentru care A* este admisibil și optim în comparație cu alți algoritmi de căutare admisibili. A* are o <a href="https://koaha.org/wiki/Euristica_ammissibile">estimare optimistă</a> a costului căii
+                prin fiecare nod luat în considerare, optimismul constă și în a ști că adevăratul cost al căii prin fiecare nod până la nodul obiectiv va merita cel puțin ceea ce este estimarea noastră. Totul se bazează pe cât de mult „știe” A*. Când
+                A* și-a terminat căutarea, prin definiție va fi găsit o cale al cărei cost actual este mai mic decât costul estimat pentru fiecare cale prin toate nodurile rămase deschise. Dar fiind această estimare optimistă, A* poate ignora în siguranță
+                aceste noduri. Cu alte cuvinte, A* nu va neglija niciodată posibilitatea de a găsi o rută mai ieftină și, prin urmare, va fi eligibil. Acum, să presupunem că un alt algoritm de căutare A își termină căutarea cu o cale al cărei cost nu
+                este mai mic decât costul estimat pentru un nod aparținând deschiderii. Algoritmul A nu poate elimina posibilitatea, pe baza informațiilor euristice pe care le deține, ca o cale printr-un astfel de nod să aibă un cost mai mic decât cel
+                estimat. Deci, chiar dacă A poate considera mai puține noduri decât A*, nu poate fi admisibil. Prin urmare, A* consideră că numărul de noduri este mai mic decât orice alt algoritm de căutare fezabil care utilizează o funcție euristică
+                nu mai precisă decât cea adoptată de A*.</p>
+        </div>
+        <img src="images/astar3.gif" alt="" id="gif3">
+        <h3 id="gif2Info">Simulare A* pentru găsirea rutei dintre Washington DC și Los Angeles</h3>
+        <div id="nextText3">
+            <h1>Monotonia lui A*</h1>
+            <p>Dacă se poate garanta că prima cale găsită de A * către orice nod este cea optimă, atunci lista ÎNCHIS nu va fi necesară. Va fi necesară doar o listă a nodurilor deja vizitate (DESCHIS), astfel încât aceste noduri nu vor fi revizuite (deoarece
+                nu va fi necesar să se facă acest lucru). Această garanție poate fi obținută dacă funcția euristică este nu numai admisibilă, ci și monotonă (sau consecventă), adică dacă diferența dintre valorile euristice pentru fiecare pereche de noduri
+                conectate nu depășește costul real asociat arcului care le conectează. (h (n1) ≤ c (n1, n2) + h (n2)). Aceasta este o formă de <a href="https://koaha.org/wiki/Disuguaglianza_triangolare">inegalitate triunghiulară</a> și garantează că nodurile
+                de-a lungul oricărei căi din spațiul de căutare au întotdeauna f(n) nedescrescând (funcția de evaluare). Se arată că A *, cu această euristică, extinde nodurile în ordinea descrescătoare a f(n), deoarece datorită cerinței de monotonie
+                nu va fi niciodată generat un nod cu f(n) mai mic decât cel al părintelui. Dacă A * extinde nodurile în ordine non-descrescătoare, atunci chiar și atunci când se găsește o nouă cale spre un nod deja în ÎNCHIS, ar putea fi ignorată deoarece
+                ar avea cu siguranță f(n) mai mare sau egal cu cea a deja extinsă nod, și având aceeași valoare estimativă euristică (este același nod) calea parcursă până la acel punct va avea cu siguranță un cost mai mare sau egal. Prin urmare, îl putem
+                arunca și putem afirma că prima cale găsită de A * către un nod este calea optimă până la acel nod. Se arată că o euristică monotonă este admisibilă și, prin urmare, dacă se respectă restricția de monotonie, se obține și calea optimă către
+                obiectiv. Intuitiv, dacă prima cale găsită către un nod este cea optimă (spre acel nod) atunci acest lucru este valabil și pentru nodul obiectiv și, prin urmare, dacă algoritmul se termină, o face cu soluția optimă. </p>
+            <p>Este util să ne amintim că A *, cu euristică admisibilă, se termină întotdeauna pe grafice finite și cu costuri strict pozitive. Restricția asupra monotoniei este o cerință mai strictă decât admisibilitatea, dar pentru multe probleme clasice
+                se poate observa că o euristică admisibilă este de obicei și monotonă. Un foarte bun exemplu de euristică admisibilă și consecventă este cel al distanței în care cioara zboară între două puncte, utilizat la calcularea traseului rutier
+                optim între orașele unei hărți. Această euristică ne permite să „vedem” ce înseamnă a fi admisibil și consecvent. Este cu siguranță admisibil, deoarece niciun drum între două puncte nu poate fi mai scurt decât distanța dintre linia dreaptă
+                dintre ele și, prin urmare, euristica nu supraestimează niciodată costul de la un nod la obiectiv. Este consecvent, așa cum se poate observa ușor desenând un triunghi în care vârfurile sunt trei orașe pe o hartă mică. Alegem orașul de
+                plecare și orașul de sosire, imaginându-ne că drumul trece prin al treilea oraș. Dacă desenăm orice drum între start și sosire, lungimea acestuia este mai mare sau egală cu cea a laturii care le unește și fiecare latură a unui triunghi
+                este la rândul ei mai mare sau egală cu diferența dintre celelalte două laturi. Prin urmare, restricția de monotonie este respectată.</p>
+        </div>
+        <h1>&nbsp &nbsp &nbsp Implementarea algoritmului în pseudocod</h1>
+        <div id="nextText6">
+            Dacă te pasionează domeniile precum inteligenta artificială, dezvoltarea de jocuri video, sau pur și simplu dorești noi provocari, nu ezita să-ți perfecționezi cunoștințele în acest algoritm!
+        </div>
+        <div id="piechart">
+            <p>A* este considerat cel mai complexe dintre algoritmii de pathfinding, iar conform github, datorita simplitatii, utilizatorii prefera:</p>
+        </div>
+        <!-- chart begin -->
+        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+        <script type="text/javascript">
+            // incarcare google charts
+            google.charts.load('current', {
+                'packages': ['corechart']
+            });
+            google.charts.setOnLoadCallback(drawChart);
+
+            // desenarea chartului
+            function drawChart() {
+                var data = google.visualization.arrayToDataTable([
+                    ['Task', 'Hours per Day'],
+                    ['A*', 530],
+                    ['Dijkstra', 612],
+                    ['DFS', 920],
+                    ['BFS', 952],
+                ]);
+
+                // adaugare titlu si dimensiuni
+                var options = {
+                    'title': 'A* star este considerat cel mai complex algoritm de pathfinding. Conform github, in functie de nivelul de dificultate, utilizatorii prefera:',
+                    'width': 450,
+                    'height': 300,
+                };
+
+                // afisarea chartului
+
+                var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+                chart.draw(data, options);
+            }
+        </script>
+
+        <!-- chart end -->
+
+    </div>
+
+    <!-- Implementare algoritm pseudocod -->
+
+    <div id="pseudoCode"><object data="pseudocod.txt" width="1200" height="620"></object></div>
+    <!-- Implementare algoritm in Python -->
+    <div id="nextText4">
+        <h1>Implementarea algoritmului în Python</h1>
+    </div>
+    <div id="pyCode"><object data="Astar.py" width="1200" height="1600"></object></div>
+    <div id="rez"><object data="rezultat.txt" width="1200" height="240"></object></div>
+    <div id="nextText5">
+        <h1>Rezultatul:</h1>
+    </div>
+
+    <div id="concl">
+        <h1 id="conclh">Concluzii</h1>
+    </div>
+
+    <!-- Bara de navigare laterala -->
+    <nav>
+        <ul>
+            <li class="a1">
+                <a href="index.html" class="logo">
+                    <img src="images/logo.png" alt="" title="Intoarce-te in pagina principala">
+                    <span class="nav-item" title="Intoarce-te in pagina principala">DCAcademy</span>
+                </a>
+            </li>
+            <li class="a1">
+                <a href="index.html">
+                    <i class="fas fa-home" title="Intoarce-te in pagina principala"></i>
+                    <span class="nav-item" title="Intoarce-te in pagina principala">Acasa</span>
+                </a>
+            </li>
+            <li class="a1">
+                <a href="courseinfo.html">
+                    <i class="fas fa-book" title="Acceseaza cursuri"></i>
+                    <span class="nav-item" title="Acceseaza cursuri">Cursuri</span>
+                </a>
+            </li>
+            <li class="a1">
+                <a href="quiz.html">
+                    <i class="fas fa-lightbulb" title="Incearca exercitii"></i>
+                    <span class="nav-item" title="Incearca exercitii">Exercitii</span>
+                </a>
+            </li>
+            <li class="a1">
+                <a href="applications.html">
+                    <i class="fas fa-gamepad" title="Aplicatii"></i>
+                    <span class="nav-item" title="Aplicatii">Interactiv</span>
+                </a>
+            </li>
+            <li class="a1">
+                <a href="about.html">
+                    <i class="fas fa-question-circle" title="Despre DCAcademy"></i>
+                    <span class="nav-item" title="Despre DCAcademy">Despre</span>
+                </a>
+            </li>
+            <li class="a1">
+                <a href="contact.html">
+                    <i class="fas fa-map-pin" title="Contact"></i>
+                    <span class="nav-item" title="Contact">Contact</span>
+                </a>
+            </li>
+
+        </ul>
+    </nav>
+</body>
+
+</html>

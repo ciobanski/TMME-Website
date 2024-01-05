@@ -1,0 +1,39 @@
+funcția A* ( start , obiectiv )
+     closedset: = mulțimea vidă% Setul de noduri deja evaluate.     
+     cu carcasa: = set care conține inițial nod% Setul de noduri tentative de a fi evaluate.
+     g_score [ start ] : = 0 % Distanța de la început de -a lungul căii optime .
+     came_from: = vida map% Harta nodurilor navigau.
+     h_score [ start ] : = heuristic_estimate_of_distance ( start , goal )
+     f_score [ start ] : = h_score [ start ] % Distanța totală estimată de la început până la obiectiv până la y .
+     în timp ce deschiderea nu este goală
+         x: = nodul în care are valoarea cu carcasa cea mai mică f_score []
+         dacă x = obiectiv
+             returnează cale reconstituire ( venit_de , gol )
+         eliminați x din deschidere
+         adăugați x la setul închis
+         y foreach în neighbor_nodes (x)
+             dacă y în closetset
+                 continua
+             tentativ_g_score : = g_score [ x ] + dist_between ( x , y )
+             
+             în cazul în care nu y în cu carcasa
+                 adăugați y la deschidere
+                
+                 tentativ_este_mai bun : = adevărat
+             elseif tentativ_g_score < g_score [ y ]
+                 tentativ_este_mai bun : = adevărat
+             altceva
+                 tentativ_este_mai bun : = false
+             dacă tentativ_este_mai bun = adevărat
+                 venit_de [ y ] : = x
+                 g_score [ y ] : = tentativ_g_score
+                 h_score [ y ] : = heuristic_estimate_of_distance ( y , goal )
+                 f_score [ y ] : = g_score [ y ] + h_score [ y ]
+     eșecul de întoarcere
+
+ funcție reconstruct_path ( came_from , current_node )
+     dacă este setat came_from [ current_node ]
+         p = reconstruct_path ( came_from , came_from [ current_node ])
+         returnare ( p + curent_nod )
+     altceva
+         a reveni calea goală

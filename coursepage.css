@@ -1,0 +1,303 @@
+/*Importarea familiei de fonturi*/
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+* {
+    margin: 0;
+    padding: 0;
+    outline: none;
+    border: none;
+    text-decoration: none;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+
+/*culoarea fundalului*/
+
+html {
+    text-overflow: clip;
+}
+
+body {
+    overflow-y: scroll;
+    overflow-x: hidden;
+    background: #8560a8;
+    background-image: url('images/sectimg.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+#title {
+    position: relative;
+    left: 100px;
+    top: 10px;
+    color: white;
+    font-size: 40px;
+    font-weight: bold;
+}
+
+#pageContent {
+    position: absolute;
+    background-color: #8560a8;
+    top: 160px;
+    left: 120px;
+    padding: 375px;
+    min-width: 100%;
+    min-height: 730%;
+    border-radius: 10px;
+}
+
+#pageText {
+    position: relative;
+    color: white;
+    font-size: 18px;
+    left: 140px;
+    top: 120px;
+}
+
+#gif {
+    position: relative;
+    border-radius: 5px;
+    ;
+}
+
+#textInfo {
+    display: table;
+    font-size: 18px;
+    position: relative;
+    color: white;
+    top: -220px;
+    left: 220px;
+    right: 20px;
+    max-width: 80%;
+    text-indent: 1cm;
+    text-align: justify;
+}
+
+#nextText {
+    font-size: 18px;
+    position: relative;
+    color: white;
+    bottom: 200px;
+    left: 10px;
+    right: 20px;
+    max-width: 90%;
+    text-indent: 1cm;
+    text-align: justify;
+}
+
+#gif2 {
+    position: relative;
+    bottom: 150px;
+    left: 630px;
+}
+
+#gifInfo {
+    position: relative;
+    bottom: 150px;
+    left: 742px;
+    font-weight: lighter;
+    font-size: 15px;
+}
+
+#nextText2 {
+    font-size: 18px;
+    position: relative;
+    color: white;
+    bottom: 120px;
+    left: 10px;
+    right: 20px;
+    max-width: 90%;
+    text-indent: 1cm;
+    text-align: justify;
+}
+
+#gif3 {
+    position: relative;
+    bottom: 80px;
+    left: 630px;
+}
+
+#gif2Info {
+    position: relative;
+    bottom: 78px;
+    left: 580px;
+    font-weight: lighter;
+    font-size: 15px;
+}
+
+#nextText3 {
+    font-size: 18px;
+    position: relative;
+    color: white;
+    bottom: 50px;
+    left: 10px;
+    right: 20px;
+    max-width: 90%;
+    text-indent: 1cm;
+    text-align: justify;
+}
+
+
+/* Implementare pseudocod */
+
+#pseudoCode {
+    color: white;
+    position: relative;
+    left: 100px;
+    top: 50px;
+    font-family: 'Courier New', Courier, monospace;
+    text-align: center;
+}
+
+
+/* Implementare cod Python */
+
+#nextText4 {
+    font-size: 18px;
+    position: relative;
+    color: white;
+    top: 280px;
+    left: 200px;
+}
+
+#pyCode {
+    color: white;
+    position: relative;
+    left: 100px;
+    top: 370px;
+    font-family: 'Courier New', Courier, monospace;
+    text-align: center;
+}
+
+#rez {
+    color: white;
+    position: relative;
+    left: 100px;
+    bottom: -440px;
+    font-family: 'Courier New', Courier, monospace;
+    text-align: center;
+}
+
+#nextText5 {
+    font-size: 18px;
+    position: relative;
+    color: white;
+    top: 140px;
+    left: 450px;
+}
+
+#concl {
+    font-size: 18px;
+    position: relative;
+    color: white;
+    top: 780px;
+    left: 205px;
+}
+
+#nextText6 {
+    font-size: 28px;
+    position: relative;
+    color: white;
+    top: 3750px;
+    left: 100px;
+    right: 200px;
+    max-width: 87%;
+    text-indent: 1cm;
+    text-align: left
+}
+
+
+/*implementarea functionalitatii barii laterale*/
+
+nav {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    height: 100%;
+    background: #fff;
+    width: 80px;
+    overflow-x: hidden;
+    transition: width 0.2s linear;
+    box-shadow: 0 20px 35px rgba(0, 0, 0, 0.1);
+}
+
+
+/*implementarea logo-ului*/
+
+.logo {
+    text-align: center;
+    display: flex;
+    transition: all 0.5s ease;
+    margin: 10px 0 0 7.5px;
+}
+
+.logo img {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+}
+
+.logo span {
+    font-weight: bold;
+    padding-left: 5px;
+    font-size: 18px;
+    text-transform: uppercase;
+}
+
+#piechart {
+    position: relative;
+    color: white;
+    top: 3150px;
+    left: 310px;
+}
+
+
+/*implementarea functionalitatii animatiilor barii laterale*/
+
+.a1 {
+    position: relative;
+    color: #8560a8;
+    font-size: 14px;
+    display: table;
+    width: 300px;
+    padding: 10px;
+}
+
+a:visited {
+    text-decoration: none;
+    color: #36264e;
+}
+
+.fas {
+    position: relative;
+    width: 60px;
+    height: 40px;
+    top: 14px;
+    font-size: 20px;
+    text-align: center;
+}
+
+.nav-item {
+    position: relative;
+    top: 12px;
+    margin-left: 18px;
+}
+
+.a1:hover {
+    background: #eee;
+    width: 250px;
+    transform: scale(1.1);
+    transition: 0.3s;
+}
+
+nav:hover {
+    width: 250px;
+    transition: all 0.5s ease;
+}
+
+.video {
+    display: flex;
+    justify-content: center;
+    margin-top: 8%;
+}

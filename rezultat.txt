@@ -1,0 +1,14 @@
+Starting...
+0) edcba
+1) ecdba
+2) ecbda
+3) ebcda
+4) becda
+5) bceda
+6) bcdea
+7) bcdae
+8) bcade
+9) bacde
+10) abcde
+
+Process finished with exit code 0

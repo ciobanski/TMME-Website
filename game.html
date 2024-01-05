@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <!-- Bootstrap 4 CDN -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <!-- CSS -->
+    <link rel='stylesheet' type='text/css' media='screen' href='style.css'>
+    <!-- FontAwesome CDN -->
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css'>
+    <!-- Iconita tab -->
+    <link rel="icon" href="images/headlogo.png" type="image/x-icon">
+    <!-- titlu tab -->
+    <title>DCAcademy | Joc </title>
+</head>
+<!-- spatiul de joc -->
+
+<body>
+    <div class="container">
+        <h1 class="text-center" style='color: white;'>Hangman</h1>
+        <div class="float-right" style='color: white;'>Greseli: <span id='mistakes'>0</span> din <span id='maxWrong'></span></div>
+        <div class="text-center">
+            <img id='hangmanPic' src="./images/0.jpg" alt="">
+            <p style='color: white;'>Ghiceste cuvantul:</p>
+            <p id="wordSpotlight">Cuvantul de ghicit:</p>
+            <div id="keyboard"></div>
+            <button class="btn btn-info" onClick="reset()">Reset</button>
+        </div>
+    </div>
+    <script src='hangman.js'></script>
+    <!-- Bara de navigare laterala -->
+
+    <nav>
+        <ul>
+            <li class="a1">
+                <a href="index.html" class="logo">
+                    <img src="images/logo.png" alt="" title="Intoarce-te in pagina principala">
+                    <span class="nav-item" title="Intoarce-te in pagina principala">DCAcademy</span>
+                </a>
+            </li>
+            <li class="a1">
+                <a href="index.html">
+                    <i class="fas fa-home" title="Intoarce-te in pagina principala"></i>
+                    <span class="nav-item" title="Intoarce-te in pagina principala">Acasa</span>
+                </a>
+            </li>
+            <li class="a1">
+                <a href="courseinfo.html">
+                    <i class="fas fa-book" title="Acceseaza cursuri"></i>
+                    <span class="nav-item" title="Acceseaza cursuri">Cursuri</span>
+                </a>
+            </li>
+            <li class="a1">
+                <a href="quiz.html">
+                    <i class="fas fa-lightbulb" title="Incearca exercitii"></i>
+                    <span class="nav-item" title="Incearca exercitii">Exercitii</span>
+                    </div>
+                </a>
+            </li>
+            <li class="a1">
+                <a href="applications.html">
+                    <i class="fas fa-gamepad" title="Aplicatii"></i>
+                    <span class="nav-item" title="Aplicatii">Interactiv</span>
+                </a>
+            </li>
+            <li class="a1">
+                <a href="about.html">
+                    <i class="fas fa-question-circle" title="Despre DCAcademy"></i>
+                    <span class="nav-item" title="Despre DCAcademy">Despre</span>
+                </a>
+            </li>
+            <li class="a1">
+                <a href="contact.html">
+                    <i class="fas fa-map-pin" title="Contact"></i>
+                    <span class="nav-item" title="Contact">Contact</span>
+                </a>
+            </li>
+
+        </ul>
+    </nav>
+
+</body>
+
+</html>

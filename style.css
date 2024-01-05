@@ -1,0 +1,156 @@
+/*Importarea familiei de fonturi*/
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+* {
+    margin: 0;
+    padding: 0;
+    outline: none;
+    border: none;
+    text-decoration: none;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+
+/*culoarea fundalului*/
+
+body {
+    background: #8560a8;
+    background-image: url('images/sectimg.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+
+/*Header-ul*/
+
+#mainHeader {
+    padding: 150px;
+    text-align: center;
+    font-size: 40px;
+    color: aliceblue;
+    line-height: 3.2em;
+}
+
+
+/*Abonarea la newsletter*/
+
+.box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 350px;
+}
+
+.form-box {
+    padding: 10px;
+    border-radius: 5px;
+    background: #ececec;
+    box-shadow: 10px 10px 15px #c7c4c4, -10px -10px -15px #fff;
+}
+
+.form-box input {
+    font-size: 18px;
+    color: #000;
+    padding: 15px 10px;
+    border: none;
+    outline: none;
+    background: #ececec;
+}
+
+.form-box button {
+    color: #fff;
+    padding: 15px 20px;
+    font-size: 20px;
+    border: none;
+    border-radius: 5px;
+    background: #8560a8;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.form-box button:hover {
+    background: #734b9b;
+}
+
+
+/*implementarea functionalitatii barii laterale*/
+
+nav {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    height: 100%;
+    background: #fff;
+    width: 80px;
+    overflow: hidden;
+    transition: width 0.2s linear;
+    box-shadow: 0 20px 35px rgba(0, 0, 0, 0.1);
+}
+
+
+/*implementarea logo-ului*/
+
+.logo {
+    text-align: center;
+    display: flex;
+    transition: all 0.5s ease;
+    margin: 10px 0 0 7.5px;
+}
+
+.logo img {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+}
+
+.logo span {
+    font-weight: bold;
+    padding-left: 5px;
+    font-size: 18px;
+    text-transform: uppercase;
+}
+
+
+/*implementarea functionalitatii animatiilor barii laterale*/
+
+.a1 {
+    position: relative;
+    color: #8560a8;
+    font-size: 14px;
+    display: table;
+    width: 300px;
+    padding: 10px;
+}
+
+a:visited {
+    text-decoration: none;
+    color: #36264e;
+}
+
+.fas {
+    position: relative;
+    width: 60px;
+    height: 40px;
+    top: 14px;
+    font-size: 20px;
+    text-align: center;
+}
+
+.nav-item {
+    position: relative;
+    top: 12px;
+    margin-left: 18px;
+}
+
+.a1:hover {
+    background: #eee;
+    width: 250px;
+    transform: scale(1.1);
+    transition: 0.3s;
+}
+
+nav:hover {
+    width: 250px;
+    transition: all 0.5s ease;
+}
